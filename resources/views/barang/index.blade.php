@@ -5,33 +5,49 @@
 @section('content')
 <div class="page-heading">
     <h3>Data barang</h3>
-    <a href="/data-barang/tambah" class="btn btn-primary">Tambah Data Barang</a>
+    {{-- <a href="/data-barang/tambah" class="btn btn-primary">Tambah Data Barang</a> --}}
   </div>
   <div class="page-content">
     <section id="basic-horizontal-layouts">
         <table class="table table-bordered" style="background-color: white;">
             <thead>
                 <tr>
-                    <th>No</th>
-                    <th>NIK</th>
-                    <th>Nama Pemilik</th>
-                    <th>Alamat Pemilik</th>
-                    <th>Jenis Barang</th>
-                    <th>Nama Barang</th>
-                    <th>Plat Nomor</th>
+                  <th scope="col">No</th>
+                  <th scope="col">No Perkara</th>
+                  <th scope="col">Nama Barang</th>
+                  <th scope="col">Lokasi Penyimpanan</th>
+                  <th scope="col">Tanggal Perkara</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Action</th>
                 </tr>
-            </thead>
-            <tbody>
+              </thead>
+              <tbody>
+                @foreach ($perkara as $data)
                 <tr>
-                    <td>1</td>
-                    <td>1234567</td>
-                    <td>Dani Mana</td>
-                    <td>Jakarta Selatan</td>
-                    <td>Kendaraan Bermotor</td>
-                    <td>Supra Fit</td>
-                    <td>A 1762 BB</td>
+                  <td >{{$loop->iteration }}</td>
+                  <td>{{$data->no_perkara}}</td>
+                  <td>{{$data->BarangSitaan->nama_barang}}</td>    
+                  <td>{{$data->Penyimpanan->nama_lokasi}}</td>    
+                  <td>{{$data->tanggal_perkara}}</td>      
+                  <td>{{$data->status}}</td>           
+                  <td>
+                    <a href="/admin/perkara/edit/{{ $data->id }}" class="btn m-1 btn-warning"><i class="bi bi-pencil-square"></i></a>
+                    <form action="/admin/perkara/delete/{{$data->id}}" method="POST" class="d-inline">
+                      @csrf
+                      @method('DELETE')
+                    <button type="submit" class="btn btn-danger btn-xs"><i class="bi bi-trash"></i> </button>
+                    </form>
+
+
+                    {{-- <a href="/admin/kriteria/edit" class="btn m-1 btn-warning"><i class="bi bi-pencil-square"></i></a>
+                    <a href="/kriteria/destroy" class="btn m-1 btn-danger"><i class="bi bi-trash"></i></a> --}}
+
+                  </td>
                 </tr>
-            </tbody>
+                @endforeach
+             
+               
+              </tbody>
         </table>
     </section>
     {{-- <section class="row">

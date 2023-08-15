@@ -2,9 +2,9 @@
 <div class="header-top">
   <div class="container">
       <div class="logo">
-          <a href="/" style="font-weight: bold"><h3>SIPBASIN</h3></a>
+          <a href="/" style="font-weight: bold"><h3>SIPBABA</h3></a>
       </div>
-      <div class="header-top-right">
+      {{-- <div class="header-top-right">
 
           <div class="dropdown">
               <a href="#" id="topbarUserDropdown" class="user-dropdown d-flex align-items-center dropend dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false">
@@ -28,6 +28,6 @@
           <a href="#" class="burger-btn d-block d-xl-none">
               <i class="bi bi-justify fs-3"></i>
           </a>
-      </div>
+      </div> --}}
   </div>
 </div>
