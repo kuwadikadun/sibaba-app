@@ -10,9 +10,9 @@ use Illuminate\Http\Request;
 class BarangController extends Controller
 {
     public function dataBarang(){
-        $perkara = Perkara::all();
+        $barang = BarangSitaan::all();
 
-        return view('barang.index', compact('perkara'));
+        return view('user.barang.index', compact('barang'));
     }
 
     public function index(){
@@ -56,7 +56,7 @@ class BarangController extends Controller
     ]);
     BarangSitaan::create($validasiData);
 
-    return redirect('/admin/barang');
+    return redirect('/admin/barang')->with('status', 'Barang berhasil ditambahkan!');
 }
 
 public function edit($id){
@@ -69,8 +69,11 @@ public function update(Request $request, $id){
 
     $validasiData = $request->validate([
 
-        'nama_lokasi' =>  'required|string|max:255',
-        'alamat_lokasi' =>   'required|string|max:255',
+        // 'no_barang' =>  'required|string|max:255',
+    'nama_barang' =>   'required|string|max:255',
+    'jenis_barang' =>   'required|string|max:255',
+    'deskripsi' =>   'required|string|max:255',
+    // 'id_pelaku' =>   'required',
     
     
     
@@ -83,11 +86,11 @@ public function update(Request $request, $id){
 
 
 
-    return redirect('/admin/barang');
+    return redirect('/admin/barang')->with('status', 'Barang berhasil diubah!');
 }
 
 public function delete($id){
     BarangSitaan::destroy($id);
-    return back();
+    return back()->with('status', 'Barang berhasil dihapus!');
 }
 }

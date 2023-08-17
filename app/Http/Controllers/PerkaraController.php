@@ -56,13 +56,17 @@ class PerkaraController extends Controller
 
     Perkara::create($validasiData);
 
-    return redirect('/admin/perkara');
+    return redirect('/admin/perkara')->with('status', 'Perkara berhasil ditambahkan!');
 }
 
 public function edit($id){
     $perkara = Perkara::where('id',$id)->get();
+
+    $barang = BarangSitaan::all();
+
+    $penyimpanan = Penyimpanan::all();
  
-    return view('admin.perkara.edit', compact('perkara'));
+    return view('admin.perkara.edit', compact('perkara', 'barang', 'penyimpanan'));
 } 
 
 public function update(Request $request, $id){
@@ -80,7 +84,6 @@ public function update(Request $request, $id){
     
     
         ]);
-        $validasiData['password'] = Hash::make($validasiData['password']);
         Perkara::where('id', $id)->update($validasiData);
 
 
@@ -89,11 +92,11 @@ public function update(Request $request, $id){
 
 
 
-    return redirect('/admin/perkara');
+    return redirect('/admin/perkara')->with('status', 'Perkara berhasil diubah!');
 }
 
 public function delete($id){
     Perkara::destroy($id);
-    return back();
+    return back()->with('status', 'Perkara berhasil dihapus!');
 }
 }

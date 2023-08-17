@@ -64,7 +64,7 @@
           <a href="/" class='menu-link @if (request()->segment(1) == "regulasi")
             active
         @endif'>
-              <i class="bi bi-stack"></i>
+              <i class="bi bi-layers-half"></i>
               <span>Regulasi</span>
           </a>
           <div
@@ -99,11 +99,20 @@
       </li>
 
       <li class="menu-item ">
+        <a href="/penyimpanan" class='menu-link @if (request()->segment(1) == "penyimpanan")
+            active
+        @endif'>
+            <i class="bi bi-archive-fill"></i>
+            <span>Penyimpanan</span>
+        </a>
+    </li>
+
+      <li class="menu-item ">
         <a href="/data-barang" class='menu-link @if (request()->segment(1) == "data-barang")
             active
         @endif'>
-            <i class="bi bi-grid-fill"></i>
-            <span>Data Barang</span>
+            <i class="bi bi-bookmark-x-fill"></i>
+            <span>Data Barang Sitaan</span>
         </a>
     </li>
       

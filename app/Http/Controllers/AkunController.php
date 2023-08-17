@@ -34,7 +34,7 @@ class AkunController extends Controller
 
     User::create($validasiData);
 
-    return redirect('/admin/akun');
+    return redirect('/admin/akun')->with('status', 'Akun berhasil ditambahkan!');
 }
 
 public function edit($id){
@@ -79,12 +79,12 @@ public function update(Request $request, $id){
 
 
 
-    return redirect('/admin/akun');
+    return redirect('/admin/akun')->with('status', 'Akun berhasil diubah!');
 }
 
 public function delete($id){
     User::destroy($id);
-    return back();
+    return back()->with('status', 'Akun berhasil dihapus!');
 }
 // End AkunController
 }

@@ -3,13 +3,6 @@
 @section('content')
 <div class="pagetitle">
     <h1>Tambah Akun</h1>
-    <nav>
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item">Akun</li>
-        <li class="breadcrumb-item active">Create</li>
-      </ol>
-    </nav>
   </div><!-- End Page Title -->
   <section class="section">
     <div class="row">
@@ -46,7 +39,7 @@
               </div>
               <div class="col-12">
                 <label for="inputEmail4" class="form-label">Role</label>
-                <input type="text" class="form-control" value="Admin" id="role" readonly name="role">
+                <input type="text" class="form-control" value="admin" id="role" readonly name="role">
 
 
                 {{-- <select name="role" id="role" class="form-control">

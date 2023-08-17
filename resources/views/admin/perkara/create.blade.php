@@ -2,14 +2,7 @@
 
 @section('content')
 <div class="pagetitle">
-    <h1>Tambah Kriteria</h1>
-    <nav>
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item">perkara</li>
-        <li class="breadcrumb-item active">Create</li>
-      </ol>
-    </nav>
+    <h1>Tambah Perkara</h1>
   </div><!-- End Page Title -->
   <section class="section">
     <div class="row">
@@ -66,7 +59,7 @@
               </div>
               <div class="text-center">
                 <button type="submit" class="btn btn-primary  me-1 mb-1">Submit</button>
-           <a href="/admin/pegawai" class="btn btn-danger me-1 mb-1">Batal</a>
+           <a href="/admin/perkara" class="btn btn-danger me-1 mb-1">Batal</a>
               </div>
             </form><!-- Vertical Form -->
 

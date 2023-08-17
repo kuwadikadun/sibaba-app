@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Penyimpanan;
+use App\Models\Perkara;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -30,7 +31,7 @@ class PenyimpananController extends Controller
     ]);
     Penyimpanan::create($validasiData);
 
-    return redirect('/admin/penyimpanan');
+    return redirect('/admin/penyimpanan')->with('status', 'Data berhasil ditambahkan!');
 }
 
 public function edit($id){
@@ -57,11 +58,24 @@ public function update(Request $request, $id){
 
 
 
-    return redirect('/admin/penyimpanan');
+    return redirect('/admin/penyimpanan')->with('status', 'Data berhasil diubah!');
 }
 
 public function delete($id){
     Penyimpanan::destroy($id);
-    return back();
+    return back()->with('status', 'Data berhasil dihapus!');
+}
+
+public function userSimpan() {
+    $penyimpanan = Penyimpanan::all();
+    return view('user.penyimpanan.penyimpanan', compact('penyimpanan'));
+}
+
+public function userSimpanLokasi() {
+    $lokasi = request()->segment(2);
+
+    $perkara = Perkara::where('id_penyimpanan', $lokasi)->get();
+
+    return view('user.penyimpanan.lokasi', compact('perkara'));
 }
 }

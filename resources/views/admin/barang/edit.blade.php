@@ -2,14 +2,7 @@
 
 @section('content')
 <div class="pagetitle">
-    <h1>Edit Pegawai</h1>
-    <nav>
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item">Pegawai</li>
-        <li class="breadcrumb-item active">Edit</li>
-      </ol>
-    </nav>
+    <h1>Edit Barang Sitaan</h1>
   </div><!-- End Page Title -->
   <section class="section">
     <div class="row">
@@ -27,22 +20,34 @@
 
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Data Pegawai</h5>
-              @foreach ($pegawai as $data)
-              <form class="row g-3" action="/admin/pegawai/update/{{$data->id}}" method="POST" >
+            <h5 class="card-title">Data Barang Sitaan</h5>
+              @foreach ($barang as $data)
+              <form class="row g-3" action="/admin/barang/update/{{$data->id}}" method="POST" >
                 @csrf
                 @method('PATCH')
                 <div class="col-12">
-                  <label for="inputNanme4" class="form-label">Kode Kriteria</label>
-                  <input type="text" readonly class="form-control" value="{{ $data->kd_pegawai }}" id="kd_pegawai" name="kd_pegawai">
+                  <label for="inputNanme4" class="form-label">No Barang</label>
+                  <input type="text" readonly class="form-control" value="{{ $data->no_barang }}" id="no_barang" name="no_barang" readonly disabled>
                 </div>
                 <div class="col-12">
-                  <label for="inputEmail4" class="form-label">Nama Kriteria</label>
-                  <input type="text" class="form-control" value="{{ $data->nama_pegawai}}"id="nama_pegawai" name="nama_pegawai">
+                  <label for="inputEmail4" class="form-label">Nama Barang</label>
+                  <input type="text" class="form-control" value="{{ $data->nama_barang}}"id="nama_barang" name="nama_barang">
+                </div>
+                <div class="col-12">
+                  <label for="inputEmail4" class="form-label">Jenis Barang</label>
+                  <input type="text" class="form-control" value="{{ $data->jenis_barang}}"id="jenis_barang" name="jenis_barang">
+                </div>
+                <div class="col-12">
+                  <label for="inputEmail4" class="form-label">Deskripsi</label>
+                  <input type="text" class="form-control" value="{{ $data->deskripsi}}"id="deskripsi" name="deskripsi">
+                </div>
+                <div class="col-12">
+                  <label for="inputEmail4" class="form-label">Pelaku</label>
+                  <input type="text" class="form-control" value="{{ $data->Pelaku->nama_pelaku}}"id="pelaku" name="pelaku" readonly disabled>
                 </div>
                 <div class="text-center">
                   <button type="submit" class="btn btn-primary  me-1 mb-1">Submit</button>
-             <a href="/admin/pegawai" class="btn btn-danger me-1 mb-1">Batal</a>
+             <a href="/admin/barang" class="btn btn-danger me-1 mb-1">Batal</a>
                 </div>
               </form><!-- Vertical Form -->
   

@@ -1,10 +1,10 @@
 @extends('layout.main')
 
-@section('title', 'Data barang')
+@section('title', 'Data Barang Sitaan')
 
 @section('content')
 <div class="page-heading">
-    <h3>Data barang</h3>
+    <h3>Data Barang Sitaan</h3>
     {{-- <a href="/data-barang/tambah" class="btn btn-primary">Tambah Data Barang</a> --}}
   </div>
   <div class="page-content">
@@ -13,36 +13,22 @@
             <thead>
                 <tr>
                   <th scope="col">No</th>
-                  <th scope="col">No Perkara</th>
+                  <th scope="col">No Barang</th>
                   <th scope="col">Nama Barang</th>
-                  <th scope="col">Lokasi Penyimpanan</th>
-                  <th scope="col">Tanggal Perkara</th>
-                  <th scope="col">Status</th>
-                  <th scope="col">Action</th>
+                  <th scope="col">Jenis Barang</th>
+                  <th scope="col">Deskripsi</th>
+                  <th scope="col">Pelaku</th>
                 </tr>
               </thead>
               <tbody>
-                @foreach ($perkara as $data)
+                @foreach ($barang as $data)
                 <tr>
                   <td >{{$loop->iteration }}</td>
-                  <td>{{$data->no_perkara}}</td>
-                  <td>{{$data->BarangSitaan->nama_barang}}</td>    
-                  <td>{{$data->Penyimpanan->nama_lokasi}}</td>    
-                  <td>{{$data->tanggal_perkara}}</td>      
-                  <td>{{$data->status}}</td>           
-                  <td>
-                    <a href="/admin/perkara/edit/{{ $data->id }}" class="btn m-1 btn-warning"><i class="bi bi-pencil-square"></i></a>
-                    <form action="/admin/perkara/delete/{{$data->id}}" method="POST" class="d-inline">
-                      @csrf
-                      @method('DELETE')
-                    <button type="submit" class="btn btn-danger btn-xs"><i class="bi bi-trash"></i> </button>
-                    </form>
-
-
-                    {{-- <a href="/admin/kriteria/edit" class="btn m-1 btn-warning"><i class="bi bi-pencil-square"></i></a>
-                    <a href="/kriteria/destroy" class="btn m-1 btn-danger"><i class="bi bi-trash"></i></a> --}}
-
-                  </td>
+                  <td>{{$data->no_barang}}</td>
+                  <td>{{$data->nama_barang}}</td>    
+                  <td>{{$data->jenis_barang}}</td>    
+                  <td>{{$data->deskripsi}}</td>      
+                  <td>{{$data->Pelaku->nama_pelaku}}</td>
                 </tr>
                 @endforeach
              

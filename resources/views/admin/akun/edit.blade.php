@@ -3,13 +3,6 @@
 @section('content')
 <div class="pagetitle">
     <h1>Edit Akun</h1>
-    <nav>
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item">Akun</li>
-        <li class="breadcrumb-item active">Edit</li>
-      </ol>
-    </nav>
   </div><!-- End Page Title -->
   <section class="section">
     <div class="row">
@@ -45,20 +38,8 @@
                   <input type="password" class="form-control" value="{{ old('password') }}" id="password" name="password">
                 </div>
                 <div class="col-12">
-                  <label for="inputAddress" class="form-label">Role</label>
-                  <select name="role" id="role" class="form-control">
-                    <option disabled value="">Pilih Role</option>
-                    <option @if ($data->role == 'admin')
-                      selected
-                     @endif value="admin">Admin</option>
-                     <option @if ($data->role == 'user')
-                      selected
-                     @endif value="user">User</option>
-                  <option @if ($data->role == 'kepala bidang')
-                      selected
-                  @endif value="kepala bidang">Kepala bidang</option>
-             
-                </select>
+                  <label for="inputEmail4" class="form-label">Role</label>
+                <input type="text" class="form-control" value="{{ $data->role }}" id="role" readonly name="role">
   
   
   

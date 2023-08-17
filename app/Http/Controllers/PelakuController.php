@@ -37,7 +37,7 @@ class PelakuController extends Controller
 
     Pelaku::create($validasiData);
 
-    return redirect('/admin/pelaku');
+    return redirect('/admin/pelaku')->with('status', 'Pelaku berhasil ditambahkan!');
 }
 
 public function edit($id){
@@ -66,12 +66,12 @@ public function update(Request $request, $id){
 
 
 
-    return redirect('/admin/pelaku');
+    return redirect('/admin/pelaku')->with('status', 'Akun berhasil diubah!');
 }
 
 public function delete($id){
     Pelaku::destroy($id);
-    return back();
+    return back()->with('status', 'Akun berhasil dihapus!');
 }
 // End pelakuController
 }

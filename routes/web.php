@@ -34,9 +34,10 @@ Route::post('/logout/admin', [App\Http\Controllers\LoginController::class, 'logo
 
 // Route::get('/login', [AuthLoginController::class, 'index']);
 
-Route::get('/tes', [LoginController::class, 'tes']);
+// Route::get('/tes', [LoginController::class, 'tes']);
 
-Route::get('/', [AdminController::class, 'index']);
+// User
+Route::get('/', [AdminController::class, 'user']);
 
 Route::get('/profil/tugas-pokok-fungsi', [InfoController::class, 'tugasPokok']);
 Route::get('/profil/dasar-hukum', [InfoController::class, 'dasarHukum']);
@@ -47,9 +48,10 @@ Route::get('/regulasi/undang-undang', [InfoController::class, 'uu']);
 Route::get('/regulasi/peraturan-pemerintah', [InfoController::class, 'pp']);
 Route::get('/regulasi/peraturan-presiden', [InfoController::class, 'perpres']);
 
-Route::get('/data-barang', [BarangController::class, 'dataBarang']);
-Route::get('/data-barang/tambah', [BarangController::class, 'tambah']);
+Route::get('penyimpanan', [PenyimpananController::class, 'userSimpan']);
+Route::get('penyimpanan/{nama_lokasi}', [PenyimpananController::class, 'userSimpanLokasi']);
 
+Route::get('/data-barang', [BarangController::class, 'dataBarang']);
 
 
 
@@ -57,7 +59,7 @@ Route::get('/data-barang/tambah', [BarangController::class, 'tambah']);
 // Admin
 
 // Pelaku
-Route::get('/admin/dashboard', [AdminController::class, 'dashboard']);
+Route::get('/admin', [AdminController::class, 'index']);
 
     // Akun
     Route::get('/admin/akun', [AkunController::class, 'index']);
