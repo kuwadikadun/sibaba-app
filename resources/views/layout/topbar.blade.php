@@ -2,7 +2,7 @@
 <div class="header-top">
   <div class="container">
       <div class="logo">
-          <a href="/" style="font-weight: bold"><h3>SIPBABA</h3></a>
+          <a href="/" style="font-weight: bold"><h3>SIBABA</h3></a>
       </div>
       {{-- <div class="header-top-right">
 

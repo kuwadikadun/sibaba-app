@@ -61,6 +61,7 @@ Route::get('/data-barang', [BarangController::class, 'dataBarang']);
 
 // Pelaku
     
+    Route::get('/admin', [AdminController::class, 'dashboard']);
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard']);
     // Route::get('/admin/akun', [AkunController::class, 'index']);
     // Akun

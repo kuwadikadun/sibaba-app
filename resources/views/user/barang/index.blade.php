@@ -11,8 +11,9 @@
     <section id="basic-horizontal-layouts">
         <table class="table table-bordered" style="background-color: white;">
             <thead>
-                <tr>
+                <tr class="text-center">
                   <th scope="col">No</th>
+                  <th scope="col">Foto</th>
                   <th scope="col">No Barang</th>
                   <th scope="col">Nama Barang</th>
                   <th scope="col">Jenis Barang</th>
@@ -24,6 +25,7 @@
                 @foreach ($barang as $data)
                 <tr>
                   <td >{{$loop->iteration }}</td>
+                  <td class="text-center"><img width="100px" src="{{asset('/img/' . $data->foto) }}" alt="Foto"></td>
                   <td>{{$data->no_barang}}</td>
                   <td>{{$data->nama_barang}}</td>    
                   <td>{{$data->jenis_barang}}</td>    
