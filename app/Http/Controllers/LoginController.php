@@ -29,7 +29,7 @@ class LoginController extends Controller
 
         if(Auth::attempt($login)){
             // dd($loginPelamar);
-            return redirect('/admin/pelaku')->with('status', 'Berhasil masuk');
+            return redirect('/admin/dashboard')->with('status', 'Berhasil masuk');
         }else {
             return redirect('/login')->withErrors('Email atau Password Salah')->withInput();
         }

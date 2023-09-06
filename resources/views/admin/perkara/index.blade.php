@@ -21,7 +21,7 @@
             <h5 class="card-title">List Data Perkara</h5>
             {{-- <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable</p> --}}
             <a href="/admin/perkara/create" class="btn btn-success me-1 mb-3 mt-2"><i class="bi bi-plus" ></i>Tambah Data perkara</a>
-            <a href="/admin/perkara/cetak" class="btn btn-primary me-1 mb-3 mt-2"><i class="bi bi-printer" ></i>Cetak Data perkara</a>
+            {{-- <a href="/admin/perkara/cetak" class="btn btn-primary me-1 mb-3 mt-2"><i class="bi bi-printer" ></i>Cetak Data perkara</a> --}}
             <!-- Table with stripped rows -->
             <table class="table ">
               <thead>

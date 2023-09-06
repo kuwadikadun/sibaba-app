@@ -45,6 +45,15 @@
                   <label for="inputEmail4" class="form-label">Pelaku</label>
                   <input type="text" class="form-control" value="{{ $data->Pelaku->nama_pelaku}}"id="pelaku" name="pelaku" readonly disabled>
                 </div>
+                <div class="col-12">
+                  <label for="inputEmail4" class="form-label">Foto</label>
+                  <input type="file" class="form-control" value="{{ old('foto') }}"id="foto" name="foto">
+                  @if ($data->foto)
+                  <br>
+                  <img width="150px" src="{{asset('img/' .$data->foto)}}" alt="Foto">
+                    {{-- <p>File saat ini: {{ $user->cv }}</p> --}}
+          @endif
+                </div>
                 <div class="text-center">
                   <button type="submit" class="btn btn-primary  me-1 mb-1">Submit</button>
              <a href="/admin/barang" class="btn btn-danger me-1 mb-1">Batal</a>

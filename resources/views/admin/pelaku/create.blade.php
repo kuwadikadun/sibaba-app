@@ -37,7 +37,10 @@
                 <label for="inputNanme4" class="form-label">Alamat</label>
                 <input type="text"  class="form-control" value="{{ old('alamat') }}" id="alamat" name="alamat">
               </div>
-                        
+              <div class="col-12">
+                <label for="inputEmail4" class="form-label">Foto</label>
+                <input type="file" class="form-control" value="{{ old('foto') }}"id="foto" name="foto">
+              </div>  
               <div class="text-center">
                 <button type="submit" class="btn btn-primary  me-1 mb-1">Submit</button>
            <a href="/admin/pelaku" class="btn btn-danger me-1 mb-1">Batal</a>

@@ -52,8 +52,16 @@ class BarangController extends Controller
     'jenis_barang' =>   'required|string|max:255',
     'deskripsi' =>   'required|string|max:255',
     'id_pelaku' =>   'required',
-
+    'foto' => 'nullable|file|mimes:jpeg,png,jpg|max:2048',
     ]);
+    
+    $foto = $request->file('foto');
+        $nama_foto = 'foto'.'_'.date('Ymdhis').'.'.$request->file('foto')->getClientOriginalExtension();
+
+        $foto->move('img/',$nama_foto);
+
+        $validasiData['foto'] = $nama_foto;
+
     BarangSitaan::create($validasiData);
 
     return redirect('/admin/barang')->with('status', 'Barang berhasil ditambahkan!');
@@ -74,10 +82,19 @@ public function update(Request $request, $id){
     'jenis_barang' =>   'required|string|max:255',
     'deskripsi' =>   'required|string|max:255',
     // 'id_pelaku' =>   'required',
-    
+    'foto' => 'nullable|file|mimes:jpeg,png,jpg|max:2048',
     
     
         ]);
+
+        if ($request->hasFile('foto')) {
+            $foto = $request->file('foto');
+            $nama_foto = 'foto' . '_' . date('Ymdhis') . '.' . $foto->getClientOriginalExtension();
+            $foto->move('img/', $nama_foto);
+    
+            $validasiData['foto'] = $nama_foto;
+        }
+        
         BarangSitaan::where('id', $id)->update($validasiData);
 
 

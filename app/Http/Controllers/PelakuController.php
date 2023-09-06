@@ -29,11 +29,17 @@ class PelakuController extends Controller
     'nik' =>  'required|string|max:255|unique:Pelakus',
     'nama_pelaku' =>  'required|string|max:255',
     'alamat' =>  'required|string|max:255',
-
+    'foto' => 'nullable|file|mimes:jpeg,png,jpg|max:2048',
 
 
     ]);
 
+    $foto = $request->file('foto');
+    $nama_foto = 'foto'.'_'.date('Ymdhis').'.'.$request->file('foto')->getClientOriginalExtension();
+
+    $foto->move('img/',$nama_foto);
+
+    $validasiData['foto'] = $nama_foto;
 
     Pelaku::create($validasiData);
 
@@ -51,13 +57,22 @@ public function update(Request $request, $id){
     $validasiData = $request->validate([
 
 
-        'nik' =>  'required|string|max:255|unique:Pelakus',
+        'nik' =>  'nullable|string|max:255',
         'nama_pelaku' =>  'required|string|max:255',
         'alamat' =>  'required|string|max:255',
-    
+        'foto' => 'nullable|file|mimes:jpeg,png,jpg|max:2048',
     
     
         ]);
+
+        if ($request->hasFile('foto')) {
+            $foto = $request->file('foto');
+            $nama_foto = 'foto' . '_' . date('Ymdhis') . '.' . $foto->getClientOriginalExtension();
+            $foto->move('img/', $nama_foto);
+    
+            $validasiData['foto'] = $nama_foto;
+        }
+        
         Pelaku::where('id', $id)->update($validasiData);
 
 

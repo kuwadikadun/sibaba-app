@@ -14,6 +14,7 @@ class Pelaku extends Model
         'nik',
         'nama_pelaku',
         'alamat',
+        'foto'
     ];
 
     public function BarangSitaan(){

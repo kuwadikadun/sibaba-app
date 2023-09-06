@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LoginController as AuthLoginController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\PelakuController;
 use App\Http\Controllers\PerkaraController;
 use App\Http\Controllers\PenyimpananController;
@@ -30,7 +31,7 @@ use App\Http\Controllers\PenyimpananController;
 
 Route::get('/login', [App\Http\Controllers\LoginController::class, 'index']);
 Route::post('/login/admin',  [App\Http\Controllers\LoginController::class, 'login']);
-Route::post('/logout/admin', [App\Http\Controllers\LoginController::class, 'logout']);
+Route::post('/logout', [App\Http\Controllers\LoginController::class, 'logout']);
 
 // Route::get('/login', [AuthLoginController::class, 'index']);
 
@@ -59,8 +60,9 @@ Route::get('/data-barang', [BarangController::class, 'dataBarang']);
 // Admin
 
 // Pelaku
-Route::get('/admin', [AdminController::class, 'index']);
-
+    
+    Route::get('/admin/dashboard', [AdminController::class, 'dashboard']);
+    // Route::get('/admin/akun', [AkunController::class, 'index']);
     // Akun
     Route::get('/admin/akun', [AkunController::class, 'index']);
     Route::get('/admin/akun/create', [AkunController::class, 'create']);
@@ -104,4 +106,5 @@ Route::get('/admin', [AdminController::class, 'index']);
     Route::get('/admin/perkara/edit/{id}', [App\Http\Controllers\PerkaraController::class, 'edit']);
     Route::patch('/admin/perkara/update/{id}', [App\Http\Controllers\PerkaraController::class, 'update']);
     Route::delete('/admin/perkara/delete/{id}', [App\Http\Controllers\PerkaraController::class, 'delete']);
-    Route::get('/admin/perkara/cetak', [PerkaraController::class, 'cetak']);
+    Route::get('/admin/cetak', [LaporanController::class, 'cetakPerkara']);
+    Route::get('/admin/cetak-perkara-pertanggal/{tanggal_awal}/{tanggal_akhir}', [App\Http\Controllers\LaporanController::class, 'cetakPerkaraPertanggal']);

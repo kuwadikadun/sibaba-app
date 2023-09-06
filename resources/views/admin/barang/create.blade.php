@@ -42,6 +42,10 @@
                 <input type="text" class="form-control" value="{{ old('deskripsi') }}"id="deskripsi" name="deskripsi">
               </div>
               <div class="col-12">
+                <label for="inputEmail4" class="form-label">Foto</label>
+                <input type="file" class="form-control" value="{{ old('foto') }}"id="foto" name="foto">
+              </div>
+              <div class="col-12">
                 <label for="inputEmail4" class="form-label">Nama Pelaku</label>
                 {{-- <input type="text" class="form-control" value="{{ old('nama_pelaku') }}"id="nama_pelaku" name="nama_pelaku"> --}}
                 <select name="id_pelaku" id="id_pelaku" class="form-control" >

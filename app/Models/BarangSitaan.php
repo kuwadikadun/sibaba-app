@@ -11,6 +11,7 @@ class BarangSitaan extends Model
 
     protected $fillable = [
         'no_barang',
+        'foto',
         'nama_barang',
         'jenis_barang',
         'deskripsi',

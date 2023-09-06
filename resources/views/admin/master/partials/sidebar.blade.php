@@ -44,6 +44,12 @@
         </a>
       </li><!-- End Kriteria Page Nav -->
 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="/admin/cetak">
+          <i class="bi bi-printer-fill"></i>
+          <span>Laporan Perkara</span>
+        </a>
+      </li><!-- End Kriteria Page Nav -->
 
   
 

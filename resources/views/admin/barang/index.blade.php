@@ -27,6 +27,7 @@
               <thead>
                 <tr>
                   <th scope="col">No</th>
+                  <th scope="col">Foto</th>
                   <th scope="col">No Barang</th>
                   <th scope="col">Nama Barang</th>
                   <th scope="col">Jenis Barang</th>
@@ -39,6 +40,7 @@
                 @foreach ($barang as $data)
                 <tr>
                   <td >{{$loop->iteration }}</td>
+                  <td><img width="150px" src="{{asset('img/' .$data->foto)}}" alt="Foto"></td>
                   <td>{{$data->no_barang}}</td>
                   <td>{{$data->nama_barang}}</td>  
                   <td>{{$data->jenis_barang}}</td>  

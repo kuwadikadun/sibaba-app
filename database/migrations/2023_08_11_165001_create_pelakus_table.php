@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nik')->unique();
             $table->string('nama_pelaku');
             $table->string('alamat');
+            $table->string('foto')->nullable();
             $table->timestamps();
         });
     }

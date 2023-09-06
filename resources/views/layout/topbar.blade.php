@@ -2,7 +2,7 @@
 <div class="header-top">
   <div class="container">
       <div class="logo">
-          <a href="/" style="font-weight: bold"><h3>SIPBASIN</h3></a>
+          <a href="/" style="font-weight: bold"><h3>SIPBABA</h3></a>
       </div>
       {{-- <div class="header-top-right">
 
@@ -29,6 +29,6 @@
               <i class="bi bi-justify fs-3"></i>
           </a>
       </div> --}}
-      <a href="/admin"><i class="bi bi-person-circle"></i> Saya Admin</a>
+      <a href="/login"><i class="bi bi-person-circle"></i> Saya Admin</a>
   </div>
 </div>

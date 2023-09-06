@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BarangSitaan;
+use App\Models\Pelaku;
+use App\Models\Penyimpanan;
+use App\Models\Perkara;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -9,6 +13,9 @@ use Illuminate\Support\Facades\Hash;
 
 class AkunController extends Controller
 {
+
+
+
     public function index(){
         $akun = User::all();
         return view('admin.akun.index', compact('akun'));

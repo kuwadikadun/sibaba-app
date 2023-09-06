@@ -3,7 +3,7 @@
     <div class="d-flex align-items-center justify-content-between">
       <a href="/admin" class="logo d-flex align-items-center">
         {{-- <img src="assets/img/logo.png" alt=""> --}}
-        <span class="d-none d-lg-block">SIPBASIN</span>
+        <span class="d-none d-lg-block">SIBABA</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -19,10 +19,10 @@
 {{-- <h1>sadasd</h1> --}}
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             {{-- <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle"> --}}
-            {{-- <span class="d-none d-md-block dropdown-toggle ps-2"> {{auth()->user()->name}}</span> --}}
+            <span class="d-none d-md-block dropdown-toggle ps-2"> {{auth()->user()->name}}</span>
           </a><!-- End Profile Iamge Icon -->
 
-          {{-- <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
               <h6> {{auth()->user()->name}}</h6>
               <span> {{auth()->user()->role}}</span>
@@ -33,16 +33,13 @@
 
           
             <li>
-              <a class="dropdown-item" href="{{ route('logout') }}"
-              onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();"><i
-              class="icon-mid bi bi-box-arrow-left me-2"></i> 
-               {{ __('Logout') }}
-           </a>
+           
 
-           <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-               @csrf
-           </form> --}}
+           <form action="{{ url('/logout') }}" method="POST">
+            @csrf
+            <button type="submit" class="dropdown-item btn btn-danger"></i> <span>Logout</span></button>
+        </form>
+
           
   </li>
 
