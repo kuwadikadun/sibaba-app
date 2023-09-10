@@ -21,6 +21,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_penyimpanan');
             $table->foreign('id_penyimpanan')->references('id')->on('penyimpanans')->onDelete('cascade');
             $table->date('tanggal_perkara');
+            $table->string('deskripsi');
             $table->string('status');
             $table->timestamps();
         });

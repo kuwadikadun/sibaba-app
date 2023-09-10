@@ -48,6 +48,7 @@ class PerkaraController extends Controller
     'id_barang' =>  'required',
     'id_penyimpanan' =>  'required',
     'tanggal_perkara' => 'required',
+    'deskripsi' => 'required',
     'status' =>  'required|string|max:255',
 
 
@@ -78,6 +79,7 @@ public function update(Request $request, $id){
         'id_barang' =>  'required',
         'id_penyimpanan' =>  'required',
         'tanggal_perkara' => 'required',
+        'deskripsi' => 'required',
         'status' =>  'required|string|max:255',
     
     

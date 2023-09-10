@@ -76,6 +76,7 @@
                             <th scope="col">Nama Barang</th>
                             <th scope="col">Lokasi Penyimpanan</th>
                             <th scope="col">Tanggal Perkara</th>
+                            <th scope="col">Deskripsi Perkara</th>
                             <th scope="col">Status</th>
                             {{-- <th scope="col">Action</th> --}}
                         </tr>
@@ -90,6 +91,7 @@
               <td>{{$data->BarangSitaan->nama_barang}}</td>    
               <td>{{$data->Penyimpanan->nama_lokasi}}</td>    
               <td>{{$data->tanggal_perkara}}</td>      
+              <td>{{$data->deskripsi}}</td>      
               <td>{{$data->status}}</td>           
              
             </tr>

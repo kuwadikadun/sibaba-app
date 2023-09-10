@@ -54,6 +54,10 @@
                 <input type="date"  class="form-control" value="{{ old('tanggal_perkara') }}" id="tanggal_perkara" name="tanggal_perkara">
               </div>
               <div class="col-12">
+                <label for="inputNanme4" class="form-label">Deskripsi Perkara</label>
+                <input type="text"  class="form-control" value="{{ old('deskripsi') }}" id="deskripsi" name="deskripsi">
+              </div>
+              <div class="col-12">
                 <label for="inputNanme4" class="form-label">Status</label>
                 <input type="text"  class="form-control" value="{{ old('status') }}" id="status" name="status">
               </div>

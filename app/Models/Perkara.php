@@ -14,6 +14,7 @@ class Perkara extends Model
         'id_barang',
         'id_penyimpanan',
         'tanggal_perkara',
+        'deskripsi',
         'status',
     ];
 
